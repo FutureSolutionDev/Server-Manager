@@ -1,0 +1,11 @@
+node_modules/
+s/
+dist/
+coverage/
+saved-servers/
+**/logs/
+**/servers.json
+*.log
+*.env
+*.tsbuildinfo
+package-lock.json

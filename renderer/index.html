@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server Manager</title>
+    <link rel="shortcut icon" href="Img/Icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Css/style.css" />
+</head>
+
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <button id="new-server">+ Add Server</button>
+            <div id="server-list"></div>
+        </div>
+        <div id="main">
+            <div id="server-info" style="display: none;">
+                <h2 id="server-name"></h2>
+                <input type="text" id="entry-file" placeholder="Entry file (e.g., index.js)" />
+                <button class="btn btn-primary" id="update-entry">Save Entry</button>
+                <button class="btn btn-success" id="start-server">Start</button>
+                <button class="btn btn-success" id="restart-server">ReStart</button>
+                <button class="btn btn-danger" id="stop-server">Stop</button>
+                <button class="btn btn-primary" id="npm-install">Install Npm </button>
+                <button class="btn btn-danger" id="delete-server">Delete Server</button>
+                <div id="drop-zone">
+                    <label for="file-input" class="file-label">
+                        📁 Click to select zip file
+                    </label>
+                    <input type="file" id="file-input" />
+                </div>
+
+                <pre id="logs"></pre>
+            </div>
+            <img id="Logo" class="Logo" src="Img/Logo.png" alt="Server Manager" />
+        </div>
+    </div>
+    <!-- Alert -->
+    <div id="alert" class="alert-hidden">
+        <div class="alert-box">
+            <span id="alert-message">Message here</span>
+            <div class="progress-bar"></div>
+        </div>
+
+    </div>
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Enter Server Name</h3>
+            <input type="text" id="modal-input" />
+            <div class="modal-actions">
+                <button id="modal-cancel">Cancel</button>
+                <button id="modal-submit">Create</button>
+            </div>
+        </div>
+    </div>
+    <!-- Confirm  -->
+    <div id="confirm" class="confirm-hidden">
+        <div class="confirm-box">
+            <div id="confirm-message">Are you sure?</div>
+            <div class="confirm-actions">
+                <button id="confirm-yes">Yes</button>
+                <button id="confirm-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="Js/renderer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+{
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --win --x64",
+    "dist:all": "electron-builder --win --x64 --mac --linux",
+    "dist:mac": "electron-builder --mac --x64",
+    "dist:linux": "electron-builder --linux --x64",
+    "dist:win": "electron-builder --win --x64",
+    "dist:win:ia32": "electron-builder --win --ia32",
+    "dist:win:arm64": "electron-builder --win --arm64",
+    "dist:mac:arm64": "electron-builder --mac --arm64",
+    "dist:mac:universal": "electron-builder --mac --universal",
+    "dist:linux:arm64": "electron-builder --linux --arm64",
+    "dist:linux:ia32": "electron-builder --linux --ia32",
+    "dist:linux:universal": "electron-builder --linux --universal",
+    "dist:all:arm64": "electron-builder --win --arm64 --mac --arm64 --linux --arm64",
+    "dist:all:ia32": "electron-builder --win --ia32 --mac --ia32 --linux --ia32",
+    "dist:all:universal": "electron-builder --win --universal --mac --universal --linux --universal",
+    "dist:all:universal:arm64": "electron-builder --win --universal --mac --universal --linux --universal --arm64",
+    "dist:all:universal:ia32": "electron-builder --win --universal --mac --universal --linux --universal --ia32",
+    "dist:all:universal:arm64:ia32": "electron-builder --win --universal --mac --universal --linux --universal --arm64 --ia32",
+    "dist:all:universal:arm64:ia32:universal": "electron-builder --win --universal --mac --universal --linux --universal --arm64 --ia32 --universal"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "ansi-to-html": "^0.7.2"
+  },
+  "devDependencies": {
+    "electron": "^33.0.2",
+    "electron-builder": "^26.0.12",
+    "nodemon": "^3.1.7"
+  },
+  "name": "server-manager",
+  "description": "Server Manager Is A Desktop Application To Help You Manage Your Servers",
+  "productName": "Server Manager",
+  "author": "Sabry Dawood",
+  "copyright": "Copyright © 2025 Sabry Dawood",
+  "appId": "com.FutureSoulitions.ServerManager",
+  "version": "1.0.0",
+  "appVersion": "1.0.0",
+  "macVersion": "1.0.0",
+  "winVersion": "1.0.0",
+  "linuxVersion": "1.0.0",
+  "electronVersion": "33.0.2",
+  "build": {
+    "appId": "com.FutureSoulitions.ServerManager",
+    "productName": "Server Manager",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "icon": "./renderer/Img/Icon.ico",
+    "removePackageScripts": true,
+    "files": [
+      "main.js",
+      "Icon.ico",
+      "Utils/*",
+      "renderer/**/*",
+      "config/index.js",
+      "IpcMain/Controller.js",
+      "IpcMain/index.js",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "deleteAppDataOnUninstall": true
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "rpm",
+        "deb",
+        "pacman"
+      ]
+    }
+  }
+}
